@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_app/model/user.dart';
+import 'package:kakao_app/pages/profile_page.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({Key? key, required this.user}) : super(key: key);
@@ -7,18 +8,28 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        radius: 20,
-        backgroundImage: NetworkImage(user.backgroundImage),
-      ),
-      title: Text(
-        user.name,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-      ),
-      subtitle: Text(
-        user.intro,
-        style: TextStyle(fontSize: 12),
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProfilePage(user: user),
+          ),
+        );
+      },
+      child: ListTile(
+        leading: CircleAvatar(
+          radius: 20,
+          backgroundImage: NetworkImage(user.backgroundImage),
+        ),
+        title: Text(
+          user.name,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+        subtitle: Text(
+          user.intro,
+          style: TextStyle(fontSize: 12),
+        ),
       ),
     );
   }

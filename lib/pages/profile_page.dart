@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kakao_app/components/profile_icon_button.dart';
 import 'package:kakao_app/components/round_icon_button.dart';
-import 'package:kakao_app/model/user.dart';
+import 'package:kakao_app/models/user.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key, required this.user});

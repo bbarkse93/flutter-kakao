@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kakao_app/models/chat.dart';
+import 'package:kakao_app/pages/chat_room_page.dart';
 
 class ChatCard extends StatelessWidget {
   const ChatCard({
@@ -59,7 +60,14 @@ class ChatCard extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ChatRoomPage(),
+          ),
+        );
+      },
     );
   }
 }
